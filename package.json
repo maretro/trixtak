@@ -1,5 +1,5 @@
 {
-  "name": "triccard",
+  "name": "trixtak",
   "version": "0.0.1",
   "description": "a trick card game system",
   "main": "index.js",
@@ -7,6 +7,7 @@
     "sandbox_convert": "node ./node_modules/requirejs/bin/r.js  -convert src/sandbox/tryoutTsInBrowser src/sandbox/bin/tryoutTsInBrowser",
     "tsc": "node ./node_modules/typescript/bin/tsc",
     "test": "node ./node_modules/mocha/bin/mocha -r ./node_modules/ts-node/register -r ./node_modules/tsconfig-paths/register src/**/test.*.ts",
+    "test_d": "node ./node_modules/mocha/bin/mocha -r ./node_modules/ts-node/register -r ./node_modules/tsconfig-paths/register src/**/test.*.ts --inspect-brk",
     "clean_js": "rm ./src/**/*.js",
     "clean_js_w": "powershell.exe -command Remove-Item -Path .\\src\\**\\*.js"
   },

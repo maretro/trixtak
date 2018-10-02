@@ -6,5 +6,6 @@
         "**/.svn": true,
         "**/*.js": true,
         "**/CVS": true
-    }
+    },
+    "debug.node.autoAttach": "on"
 }
