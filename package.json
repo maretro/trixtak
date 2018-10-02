@@ -9,7 +9,8 @@
     "test": "node ./node_modules/mocha/bin/mocha -r ./node_modules/ts-node/register -r ./node_modules/tsconfig-paths/register src/**/test.*.ts",
     "test_d": "node ./node_modules/mocha/bin/mocha -r ./node_modules/ts-node/register -r ./node_modules/tsconfig-paths/register src/**/test.*.ts --inspect-brk",
     "clean_js": "rm ./src/**/*.js",
-    "clean_js_w": "powershell.exe -command Remove-Item -Path .\\src\\**\\*.js"
+    "clean_js_w": "powershell.exe -command Remove-Item -Path .\\src\\**\\*.js",
+    "run": "node -r ./node_modules/ts-node/register -r ./node_modules/tsconfig-paths/register src/testGame/game.ts"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
   "devDependencies": {
     "@types/chai": "^4.1.2",
     "@types/mocha": "^5.0.0",
+    "@types/node": "^10.11.3",
     "chai": "^4.1.2",
     "mocha": "^5.2.0",
     "requirejs": "^2.3.5",
