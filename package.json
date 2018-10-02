@@ -1,0 +1,38 @@
+{
+  "name": "triccard",
+  "version": "0.0.1",
+  "description": "a trick card game system",
+  "main": "index.js",
+  "scripts": {
+    "sandbox_convert": "node ./node_modules/requirejs/bin/r.js  -convert src/sandbox/tryoutTsInBrowser src/sandbox/bin/tryoutTsInBrowser",
+    "tsc": "node ./node_modules/typescript/bin/tsc",
+    "test": "node ./node_modules/mocha/bin/mocha -r ./node_modules/ts-node/register -r ./node_modules/tsconfig-paths/register src/**/test.*.ts",
+    "clean_js": "rm ./src/**/*.js",
+    "clean_js_w": "powershell.exe -command Remove-Item -Path .\\src\\**\\*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maretro/triccard.git"
+  },
+  "keywords": [
+    "card",
+    "game",
+    "trick"
+  ],
+  "author": "maretro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maretro/triccard/issues"
+  },
+  "homepage": "https://github.com/maretro/triccard#readme",
+  "devDependencies": {
+    "@types/chai": "^4.1.2",
+    "@types/mocha": "^5.0.0",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "requirejs": "^2.3.5",
+    "ts-node": "^5.0.1",
+    "tsconfig-paths": "^3.5.0",
+    "typescript": "^2.7.2"
+  }
+}

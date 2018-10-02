@@ -1,0 +1,1 @@
+Example on how to test witch mocha and chai

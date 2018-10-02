@@ -1,0 +1,4 @@
+# the folders/files generate by npm install
+node_modules
+src/sandbox/bin
+src/**/*.js
