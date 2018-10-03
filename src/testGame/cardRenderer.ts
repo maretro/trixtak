@@ -40,7 +40,12 @@ class CardRenderer {
     static cardSetString (cards: ICardHolder, line: number) {
         let lineString = '';
         for (let i = 0; i < cards.getNumberOfCards(); i++) {
-            lineString += this.cardString(cards.getCard(i), line) + ' ';
+            if (line == 0) {
+                lineString += (i < 10 ? ' ' : '') + String(i) + ':';
+            } else {
+                lineString += '   ';
+            }
+            lineString += this.cardString(cards.getCard(i), line);
         }
         return lineString;
     }
