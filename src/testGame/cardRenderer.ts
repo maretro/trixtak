@@ -1,7 +1,7 @@
 // untestest, this should be an interface for rendering
 // later, I guess...
 import { Card } from '@core/card'
-import { CardSet } from '@core/cardSet'
+import { ICardHolder } from '@core/interfaces/cardHolder'
 
 /*
 FgRed = "\x1b[31m"
@@ -37,7 +37,7 @@ class CardRenderer {
 
     }
 
-    static cardSetString (cards: CardSet, line: number) {
+    static cardSetString (cards: ICardHolder, line: number) {
         let lineString = '';
         for (let i = 0; i < cards.getNumberOfCards(); i++) {
             lineString += this.cardString(cards.getCard(i), line) + ' ';
@@ -45,7 +45,7 @@ class CardRenderer {
         return lineString;
     }
 
-    static renderCardSet(cards: CardSet) {
+    static renderCardSet(cards: ICardHolder) {
         for (let i = 0; i < 4; i++) {
             console.log(this.cardSetString(cards, i));
         }

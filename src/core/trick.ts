@@ -1,7 +1,8 @@
 import { Card } from '@core/card';
 import { CardSet } from '@core/cardSet';
+import { ICardHolder } from '@core/interfaces/cardHolder';
 
-class Trick {
+class Trick implements ICardHolder {
     private cards: CardSet;
     constructor() {
         this.cards = new CardSet();
@@ -14,6 +15,9 @@ class Trick {
     }
     getFirstCard() {
         return this.getCard(0);
+    }
+    getNumberOfCards() {
+        return this.cards.getNumberOfCards();
     }
 }
 

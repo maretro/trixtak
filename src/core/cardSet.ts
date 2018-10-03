@@ -1,6 +1,7 @@
 import {Card} from '@core/card';
+import {ICardHolder} from '@core/interfaces/cardHolder';
 
-class CardSet {
+class CardSet implements ICardHolder {
     public cards: Card[];
     constructor(  ) {
         this.cards = [];
