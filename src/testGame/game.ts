@@ -1,6 +1,7 @@
 import { Trick } from '@core/trick';
 import { Card } from '@core/card';
 import { CardSet } from '@core/cardSet';
+import { CardRenderer } from './cardRenderer'
 
 
 
@@ -11,9 +12,8 @@ class TestGame {
     constructor() {
         this.cards = new CardSet();
         this.generateCards();
-        for (let i = 0; i < this.cards.getNumberOfCards(); i++) {
-            console.log(i, this.cards.getCard(i));
-        }
+        console.log("All cards:");
+        CardRenderer.renderCardSet(this.cards);
     }
 
     private generateCards() {
@@ -25,12 +25,11 @@ class TestGame {
                     this.cards.addCard(card);
             }
         }
-
     }
 }
 
 function run() {
     const t = new TestGame();
-}
+};
 
 run();
