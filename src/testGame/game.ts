@@ -3,6 +3,7 @@ import { Card } from '@core/card';
 import { CardSet } from '@core/cardSet';
 import { CardRenderer } from './cardRenderer'
 import * as readline  from 'readline-sync';
+import { listenerCount } from 'cluster';
 
 
 
@@ -37,8 +38,13 @@ class TestGame {
         CardRenderer.renderCardSet(this.hand); 
         console.log("Trick:");
         CardRenderer.renderCardSet(this.trick); 
+    }
 
-
+    transferToHand(index: number) {
+        this.cards.transferTo(index, this.hand);
+    }
+    transferToTrick(index: number) {
+        this.trick.addCardFrom(index, this.hand);
     }
 }
 
@@ -48,6 +54,16 @@ function run() {
     let x = ''
     while (x !== 'end') {
         x = readline.question("Command: ");
+        if (x.length >= 2) {
+            if (x[0] == 'h') {
+                t.transferToHand(Number(x.slice(1)));
+            }
+            if (x[0] == 't') {
+                t.transferToTrick(Number(x.slice(1)));
+            }
+
+        }
+
         t.renderState();
     }
 };
