@@ -3,9 +3,6 @@ import { Card } from '@core/card';
 import { CardSet } from '@core/cardSet';
 import { CardRenderer } from './cardRenderer'
 import * as readline  from 'readline-sync';
-import { listenerCount } from 'cluster';
-
-
 
 const cards = []
 
@@ -30,6 +27,7 @@ class TestGame {
             }
         }
     }
+
     renderState() {
         console.log("--------------------------------------")
         console.log("Unused cards:");
@@ -61,9 +59,7 @@ function run() {
             if (x[0] == 't') {
                 t.transferToTrick(Number(x.slice(1)));
             }
-
         }
-
         t.renderState();
     }
 };
