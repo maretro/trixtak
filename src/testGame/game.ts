@@ -4,8 +4,6 @@ import { CardRenderer } from './cardRenderer';
 import { MyTransferToTrickRule } from './myTransferToTrickRule';
 import * as readline  from 'readline-sync';
 
-const cards = []
-
 class TestGame {
     private cards: CardSet;
     private hand: CardSet;
@@ -14,7 +12,7 @@ class TestGame {
     constructor() {
         this.cards = new CardSet();
         this.hand = new CardSet();
-        this.trick = new CardSet(); // Trick();
+        this.trick = new CardSet();
         this.rule = new MyTransferToTrickRule();
         this.generateCards();
     }
