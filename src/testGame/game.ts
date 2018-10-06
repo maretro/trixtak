@@ -55,12 +55,16 @@ function run() {
     t.renderState();
     let x = ''
     while (x !== 'end') {
-        x = readline.question("Command: ");
+        x = readline.question('Command ("li" for list): ');
         if (x.length >= 2) {
+            if (x[0] == 'l') {
+                console.log('Available commands:');
+                console.log('h[x]: transfer card with index [x] from unused cards to hand');
+                console.log('t[x]: transfer card with index [x] from hand to trick');
+                console.log('end: end game');
+            }
             if (x[0] == 'h') {
-                const n = Number(x.slice(1));
-                console.log(n);
-                t.transferToHand(n);
+                t.transferToHand(Number(x.slice(1)));
             }
             if (x[0] == 't') {
                 t.transferToTrick(Number(x.slice(1)));
