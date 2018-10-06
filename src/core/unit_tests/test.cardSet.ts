@@ -56,4 +56,12 @@ describe('CardSet', () => {
         const nrAfter = cards_01.getNumberOfCards();
         expect(nrBefore).to.equal(nrAfter);
     })
+    it ('should not remove a card if NaN index is provided', () => {
+        const cs = new CardSet();
+        cs.addCard(card_01);
+        cs.addCard(card_02);
+        cs.addCard(card_03);
+        const card = cs.removeCard(NaN);
+        expect(cs.getNumberOfCards()).to.equal(3);
+    })
 })

@@ -58,7 +58,9 @@ function run() {
         x = readline.question("Command: ");
         if (x.length >= 2) {
             if (x[0] == 'h') {
-                t.transferToHand(Number(x.slice(1)));
+                const n = Number(x.slice(1));
+                console.log(n);
+                t.transferToHand(n);
             }
             if (x[0] == 't') {
                 t.transferToTrick(Number(x.slice(1)));
