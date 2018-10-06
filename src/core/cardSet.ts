@@ -7,29 +7,38 @@ class CardSet implements ICardHolder {
         this.cards = [];
     }
 
-    addCard(card: Card) {
+    addCard(card: Card): void {
         if (card) {
             this.cards.push(card);
         }
     }
 
-    getCard(index: number) {
-        return this.cards[index];
+    getCard(index: number): Card {
+        const result = this.cards[index];
+        return result ? result: Card.nullCard;
     }
 
-    getNumberOfCards() {
+    getNumberOfCards(): number {
         return this.cards.length;
     }
 
-    removeCard(index: number) {
+    removeCard(index: number): Card {
+        if (Number.isNaN(index)) {
+            return Card.nullCard;
+        }
         const card = this.cards[index];
-        this.cards.splice(index, 1);
-        return card;
+        if (card) {
+            this.cards.splice(index, 1);
+            return card;
+        }
+        return Card.nullCard;
     }
 
-    transferTo(index: number, cardSet: CardSet) {
+    transferTo(index: number, cardSet: CardSet): void {
         const card = this.removeCard(index);
-        cardSet.addCard(card);
+        if (!Card.isNull(card)) {
+            cardSet.addCard(card);
+        }
     }
 }
 

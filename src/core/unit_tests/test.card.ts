@@ -18,10 +18,6 @@ describe ('Card', () => {
         assert.isUndefined(card.getValue('number'));
         assert.isTrue(!card.getValue('blub'));
     })
-    it ('should provide a category list', () => {
-        const card = new Card({a:1, b:2, c:3});
-        expect(card.getValueCategories()).to.deep.equal(['a', 'b', 'c']);
-    })
     it ('should allow for check of equality', () => {
         const card_01 = new Card({color: 'red', number: 1});
         const card_02 = new Card({color: 'red', number: 2});

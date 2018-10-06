@@ -28,13 +28,17 @@ describe('CardSet', () => {
     })
     it('should handle if card with undefined index is looked at', () => {
         const card = cardSet.getCard(1);
-        expect(card).be.undefined;
+        expect(Card.isNull(card)).be.true;
+    })
+    it('should handle if card with NaN index is looked at', () => {
+        const card = cardSet.getCard(NaN);
+        expect(Card.isNull(card)).be.true;
     })
     it('should handle if card with undefined index is removed', () => {
         const nrBefore = cardSet.getNumberOfCards();
         const card = cardSet.removeCard(1);
         const nrAfter = cardSet.getNumberOfCards();
-        expect(card).be.undefined;
+        expect(Card.isNull(card)).be.true;
         expect(nrBefore).to.equal(nrAfter);
     })
     it('should be able to transfer cards between sets', () => {
@@ -63,5 +67,6 @@ describe('CardSet', () => {
         cs.addCard(card_03);
         const card = cs.removeCard(NaN);
         expect(cs.getNumberOfCards()).to.equal(3);
+        expect(Card.isNull(card)).be.true;
     })
 })
