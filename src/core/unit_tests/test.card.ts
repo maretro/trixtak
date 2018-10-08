@@ -45,4 +45,11 @@ describe ('Card', () => {
         expect(Card.isEqual(card_01, card_02, ['a', 'c'])).be.true;
         expect(Card.isEqual(card_01, card_03, ['a', 'c'])).be.false;
     })
+
+    it ('should provide a way to check NULL card', () => {
+        const card = Card.nullCard;
+        const card_02 = new Card({});
+        expect(Card.isNull(card)).be.true;
+        expect(Card.isNull(card_02)).be.false;
+    })
 })

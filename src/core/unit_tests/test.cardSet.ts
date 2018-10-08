@@ -69,4 +69,10 @@ describe('CardSet', () => {
         expect(cs.getNumberOfCards()).to.equal(3);
         expect(Card.isNull(card)).be.true;
     })
+    it ('should provide a way to check NULL card set', () => {
+        const cardSet = CardSet.nullCardSet;
+        const cardSet_02 = new CardSet();
+        expect(CardSet.isNull(cardSet)).be.true;
+        expect(CardSet.isNull(cardSet_02)).be.false;
+    })
 })

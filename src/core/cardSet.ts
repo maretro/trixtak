@@ -2,6 +2,13 @@ import {Card} from '@core/card';
 import {ICardHolder} from '@core/interfaces/cardHolder';
 
 class CardSet implements ICardHolder {
+
+    public static nullCardSet = new CardSet();
+
+    public static isNull(cardSet: CardSet): boolean {
+        return cardSet === this.nullCardSet;
+    }
+
     public cards: Card[];
     constructor(  ) {
         this.cards = [];
