@@ -23,5 +23,6 @@ describe('Player', () => {
         temp_hand = player.getHand();
         expect(temp_hand.getCard(0)).to.equal(card_01);
         expect(temp_hand.getCard(1)).to.equal(card_02);
+        expect(CardSet.isNull(temp_hand)).be.false;
     })
 })
