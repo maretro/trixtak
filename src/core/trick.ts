@@ -1,11 +1,6 @@
 import { CardSet } from '@core/cardSet';
 import { Card } from '@core/card';
 
-interface cardInfoDict {
-    [key: number]: any
-}
-
-
 class Trick extends CardSet {
     private cardInfo: string[] = [];
     addCard(card: Card, info?:string):void {

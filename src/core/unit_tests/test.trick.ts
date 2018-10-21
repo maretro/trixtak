@@ -6,7 +6,6 @@ import { Trick } from '@core/trick'
 describe('Trick', () => {
     const card_01 = new Card({color: 'blue'});
     const card_02 = new Card({color: 'green'});
-    const card_03 = new Card({color: 'red'});
     const trick = new Trick();
     it('should hold cards', () => {
         expect(Card.isNull(trick.getCard(0))).be.true;
@@ -18,6 +17,5 @@ describe('Trick', () => {
         trick.addCard(card_02, id);
         const temp_card = trick.getCard(1);
         expect(trick.getInfoForCard(temp_card)).to.equal(id);
-
     })
 })
