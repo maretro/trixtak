@@ -14,7 +14,7 @@ class Trick extends CardSet {
     }
     getInfoForCard(card: Card) {
         const index = this.cards.indexOf(card);
-        return this.cardInfo[index];
+        return index != -1 ? this.cardInfo[index] : Card.nullCard;
     }
 }
 

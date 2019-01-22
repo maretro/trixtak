@@ -18,4 +18,8 @@ describe('Trick', () => {
         const temp_card = trick.getCard(1);
         expect(trick.getInfoForCard(temp_card)).to.equal(id);
     })
+    it ('should return nullCard if infos for a card not in the trick are requested', () => {
+        const card_03 = new Card({color: 'green'});
+        expect(trick.getInfoForCard(card_03)).to.equal(Card.nullCard);
+    })
 })
