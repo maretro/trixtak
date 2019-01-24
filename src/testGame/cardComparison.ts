@@ -1,6 +1,10 @@
 import { Card } from '@core/card';
 class CardComparison {
-    valueOrder: number[];
+    private valueOrder: number[];
+    public static isLower: number = -1;
+    public static isEqual: number = 0;
+    public static isHigher: number = 1;
+
     constructor () {
         this.valueOrder = [1,2,3,4];
     }
