@@ -3,10 +3,6 @@ import 'mocha';
 import {Card} from '@core/card';
 
 describe ('Card', () => {
-    it ('should take value dict', () => {
-        const value = {color: 'red'};
-        const card = new Card(value);
-    })
     it ('should be able to return a specific value', () => {
         const value = {color: 'red'};
         const card = new Card(value);

@@ -5,8 +5,11 @@ class MyTransferToTrickRule implements ITransferToTrickRule {
     check(index: number, hand: CardSet, trick: CardSet): boolean {
         if (trick.getNumberOfCards() > 0) {
             const firstCard = trick.getCard(0);
-            const selectedCard = hand.getCard(index);
+            const selectedCard = hand.getCard(index);         
             if (!Card.isEqual(firstCard, selectedCard, ['color'])) {
+                //if (hand.containsCardWithSimilarCategories(selectedCard, ['color'])) {
+                    // return false;
+                //}
                 for (let i=0; i < hand.getNumberOfCards(); i++) {
                     if (Card.isEqual(firstCard, hand.getCard(i), ['color'])) {
                         return false;

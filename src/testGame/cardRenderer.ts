@@ -18,12 +18,12 @@ class CardRenderer {
      's| C |\x1b[0m',
      's| N |\x1b[0m',
      's ~~~ \x1b[0m']
-     private static colorMap = {
+     private static colorMap: any = {
          'red':'R',
          'green':'G',
          'blue':'B'
      }
-     private static colorMap2 = {
+     private static colorMap2: any = {
         'red':'\x1b[31m',
         'green':'\x1b[32m',
         'blue':'\x1b[34m'
